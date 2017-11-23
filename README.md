@@ -30,9 +30,10 @@ public function actions()
     return [
         'Kupload' => [
             'class' => 'pjkui\kindeditor\KindEditorAction',
+            'max_size'=>1024*1024*10, //最大上传10MB
         ]
     ];
-}
+}10
 ```
 
 ##used in view :  
