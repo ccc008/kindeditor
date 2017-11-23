@@ -1,18 +1,18 @@
 {
-    "name": "pjkui/kindeditor",
+    "name": "ccc008/kindeditor",
     "description": "desc",
     "license": "MIT",
     "authors": [
         {
-            "name": "Quinn Pan",
-            "email": "pjkui@qq.com"
+            "name": "licheng",
+            "email": "635825204@qq.com"
         }
     ],
     
     "require": {},
     "autoload": {
         "psr-4": {
-            "pjkui\\kindeditor\\": ""
+            "ccc008\\kindeditor\\": ""
         }
     }
 }
