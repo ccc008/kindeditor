@@ -64,7 +64,7 @@ class KindEditorAction extends Action {
 //                'file' => array('doc', 'docx', 'xls', 'xlsx', 'ppt', 'htm', 'html', 'txt', 'zip', 'rar', 'gz', 'bz2'),
 //            ),
 //最大文件大小
-        $this->max_size = 1000000;
+        //$this->max_size = 1000000;
         $this->save_path = realpath($this->save_path) . '/';
 
         //load config file
@@ -74,6 +74,16 @@ class KindEditorAction extends Action {
 
     public function run() {
         $this->handAction();
+    }
+    
+    //最大文件大小
+    public function getMaxSize()
+    {
+        if ($this->max_size == null) {
+            $this->max_size = 1000000;
+        }
+
+        return $this->max_size;
     }
 
     /**
@@ -294,7 +304,7 @@ class KindEditorAction extends Action {
                 $this->alert("上传失败。");
             }
             //检查文件大小
-            if ($file_size > $this->max_size) {
+            if ($file_size > $this->getMaxSize()) {
                 $this->alert("上传文件大小超过限制。");
             }
             //检查目录名
