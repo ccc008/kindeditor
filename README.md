@@ -8,18 +8,18 @@ KindEditor
 Either run
 
 `
-$ php composer.phar require pjkui/kindeditor "*"
+$ php composer.phar require ccc008/kindeditor "*"
 `
 
 or add
 
 `
-"pjkui/kindeditor": "*"
+"ccc008/kindeditor": "*"
 `
 
 to the `require` section of your `composer.json` file.
 
-`'pjkui\\kindeditor\\'=>array($vendorDir . '/pjkui/kindeditor')`,
+`'ccc008\\kindeditor\\'=>array($vendorDir . '/ccc008/kindeditor')`,
 # Usage example
 
 ## add an actions() method in controller  
