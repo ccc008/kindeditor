@@ -15,12 +15,11 @@
 
  */
 
-namespace pjkui\kindeditor;
+namespace ccc008\kindeditor;
 
 use Yii;
 use yii\base\Action;
 use yii\helpers\ArrayHelper;
-use pjkui\kindeditor\Services_JSON;
 
 class KindEditorAction extends Action {
 
@@ -191,7 +190,7 @@ class KindEditorAction extends Action {
         if ($handle = opendir($current_path)) {
             $i = 0;
             while (false !== ($filename = readdir($handle))) {
-                if ($filename{0} == '.')
+                if ($filename[0] == '.')
                     continue;
                 $file = $current_path . $filename;
                 if (is_dir($file)) {
@@ -234,8 +233,7 @@ class KindEditorAction extends Action {
 
 //输出JSON字符串
         header('Content-type: application/json; charset=UTF-8');
-        $json = new Services_JSON();
-        echo $json->encode($result);
+        echo json_encode($result);
     }
 
     public function UploadJosnAction() {
@@ -346,8 +344,7 @@ class KindEditorAction extends Action {
             $file_url = $save_url . $new_file_name;
 
             header('Content-type: text/html; charset=UTF-8');
-            $json = new Services_JSON();
-            echo $json->encode(array('error' => 0, 'url' => $file_url));
+            echo json_encode(array('error' => 0, 'url' => $file_url));
             exit;
         }
 
@@ -356,8 +353,7 @@ class KindEditorAction extends Action {
     }
     public   function alert($msg) {
             header('Content-type: text/html; charset=UTF-8');
-            $json = new Services_JSON();
-            echo $json->encode(array('error' => 1, 'message' => $msg));
+            echo json_encode(array('error' => 1, 'message' => $msg));
             exit;
         }
 
